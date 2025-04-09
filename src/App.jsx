@@ -13,6 +13,11 @@ function App() {
     const newArticlesArr = [...articlesArr, newArticle];
     setArticlesArr(newArticlesArr);
     setNewArticle('');
+  };
+
+  const deleteArticle = (indexDelete) => {
+    const newArticleList = articlesArr.filter((article, index) => indexDelete !== index);
+    setArticlesArr(newArticleList);
   }
 
   return (
@@ -23,6 +28,10 @@ function App() {
             {articlesArr.map((article, index) =>
               <li key={index}>
                 {article}
+                <div type="button" onClick={() => deleteArticle(index)}>
+                  <i className="fa-solid fa-trash"></i>
+                  <span>delete</span>
+                </div>
               </li>)}
           </ul>
           <input type="text"
