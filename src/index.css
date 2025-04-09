@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.container-background {
+    background-image: url(https://st3.depositphotos.com/1558912/37156/i/950/depositphotos_371562638-stock-photo-food-cooking-background-on-wooden.jpg);
+    padding: 20px;
+}
+
+.container-list {
+    max-width: 400px;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+ul {
+    list-style: none;
+    padding: 20px;
+    line-height: 35px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+hr {
+    border: 1px solid black;
+    background-color: black;
+}
+
+.container-input {
+    padding: 20px;
+}

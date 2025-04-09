@@ -22,22 +22,31 @@ function App() {
 
   return (
     <>
-      <div>
+      <h1>LISTA DEGLI ARTICOLI DA CUCINA DA COMPRARE</h1>
+      <div className='container'>
         <form onSubmit={addArticle}>
-          <ul>
-            {articlesArr.map((article, index) =>
-              <li key={index}>
-                {article}
-                <div type="button" onClick={() => deleteArticle(index)}>
-                  <i className="fa-solid fa-trash"></i>
-                  <span>delete</span>
-                </div>
-              </li>)}
-          </ul>
-          <input type="text"
-            value={newArticle}
-            onChange={event => setNewArticle(event.target.value)} />
-          <button>aggiungi</button>
+          <div className='container-background'>
+            <div className="container-list">
+              <ul>
+                {articlesArr.map((article, index) =>
+                  <li key={index}>
+                    <h2>{article}</h2>
+                    <div type="button" onClick={() => deleteArticle(index)}>
+                      <i className="fa-solid fa-trash"></i>
+                      <span>delete</span>
+                    </div>
+                  </li>)}
+              </ul>
+            </div>
+          </div>
+          <hr />
+
+          <div className='container-input'>
+            <input type="text"
+              value={newArticle}
+              onChange={event => setNewArticle(event.target.value)} />
+            <button>aggiungi</button>
+          </div>
         </form>
       </div>
     </>
