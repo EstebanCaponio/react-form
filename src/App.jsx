@@ -5,12 +5,31 @@ import articles from './data/articles';
 
 function App() {
 
+  const [articlesArr, setArticlesArr] = useState(articles);
+  const [newArticle, setNewArticle] = useState('');
+
+  const addArticle = event => {
+    event.preventDefault();
+    const newArticlesArr = [...articlesArr, newArticle];
+    setArticlesArr(newArticlesArr);
+    setNewArticle('');
+  }
+
   return (
     <>
       <div>
-        <ul>
-          {articles.map((article, index) => <li key={index}>{article}</li>)}
-        </ul>
+        <form onSubmit={addArticle}>
+          <ul>
+            {articlesArr.map((article, index) =>
+              <li key={index}>
+                {article}
+              </li>)}
+          </ul>
+          <input type="text"
+            value={newArticle}
+            onChange={event => setNewArticle(event.target.value)} />
+          <button>aggiungi</button>
+        </form>
       </div>
     </>
   )
